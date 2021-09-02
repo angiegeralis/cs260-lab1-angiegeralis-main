@@ -5,6 +5,17 @@ Date        : 8/31/21
 Description : This is the main driver program for the Introduction to Python
 portion of Lab 1. This intro consists of a series of coding exercises that cover
 some of the core syntax, data structures, and functionality of Python
+
+fb_file = open ("data/facebook_users.csv","r")
+for line in fb_file:
+    tokens = line.split(",")
+    year = int.tokens([0])
+    users = int(tokens[1])
+    print(year,users)
+fb_file.close()
+
+data = np.loadtxt("data/facebook_users.csv", dtype=int, delimited)
+print(data)
 '''
 
 # TODO add imports here
@@ -21,6 +32,19 @@ def main():
     don't necessarily need to check *every* case), it is good practice to
     consider both the standard and corner cases when writing your tests.
     '''
+    print("movie")
+    movie_ticket_cost()
+    print("in place")
+    shuffle_in_place([1,2,3,4])
+    print("out of place")
+    shuffle_out_of_place([1,2,3,4])
+    print("fib")
+    fib(3)
+    print("binsrchr")
+    binary_search_r(4,[1,2,3,4,5])
+    print("binsrchnr")
+    binary_search_nr(4,[1,2,3,4,5])
+
     pass
 
 ################################################################################
@@ -29,7 +53,7 @@ def main():
 
 def movie_ticket_cost():
     '''
-    Description: Calculates the price of movie tickets based on the user’s age. 
+    Description: Calculates the price of movie tickets based on the user’s age.
     The method will prompt the user to enter their age, then print out the result.
     '''
     #take input of age and classify as $12 or $8 ticket
@@ -38,13 +62,13 @@ def movie_ticket_cost():
         print("$12")
     else:
         print("$8")
-        
+
     pass
 
 
 def shuffle_in_place(lst):
     '''
-    Description: Shuffles a given list in place by changing the order of the original 
+    Description: Shuffles a given list in place by changing the order of the original
     list without returning anything.
     '''
     # find length of list
@@ -54,12 +78,12 @@ def shuffle_in_place(lst):
         rand_index = random.randint(0,i+1)
         lst[i],lst[rand_index] = lst[rand_index],lst[i]
     print(lst)
- 
+
     pass
 
 def shuffle_out_of_place(lst):
     '''
-    Description: Shuffles a given list out of place by leaving the original list intact 
+    Description: Shuffles a given list out of place by leaving the original list intact
     and returning a new shuffled version of the list.
     '''
     newlst = lst[:]
@@ -69,8 +93,8 @@ def shuffle_out_of_place(lst):
     for i in (length-1,0,-1):
         rand_index = random.randint(0,i+1)
         newlst[i],newlst[rand_index] = newlst[rand_index],newlst[i]
-    print(lst) 
-    print(newlst) 
+    print(lst)
+    print(newlst)
     pass
 
 def fib(n):
@@ -87,10 +111,10 @@ def fib(n):
 
 def binary_search_r(query, lst): # recursive version
     '''
-    Take a middle element and check it against the target. - If they are equal, 
-    return the index of the middle element. - If the target is less than the middle element, 
+    Take a middle element and check it against the target. - If they are equal,
+    return the index of the middle element. - If the target is less than the middle element,
     call binary search on the first half of the list (up through but not including the middle element).
-    - If the target is greater than the middle element, call binary search on the second half of the 
+    - If the target is greater than the middle element, call binary search on the second half of the
     list (starting after the middle element and going all the way to the end).
     '''
     mid = (len(lst) -1) //2
@@ -100,17 +124,17 @@ def binary_search_r(query, lst): # recursive version
         binary_search_r(query,lst[0:mid])
     if query > lst[mid]:
         binary_search_r(query,lst[mid:(len(lst)-1)])
-    
+
     pass
 
 def binary_search_nr(query, lst): # non-recursive version
     '''
-    The inputs to this method are a query and a sorted list lst. We would 
-    like to return the index of query, or -1 if it is not in the list. 
-    One non-recursive (i.e. iterative) algorithm follows these steps: - Compute the “low” 
-    index (usually begins at 0) and the “high” index (usually begins at the length of the list - 1) - 
-    Compute the index of the middle element (using “low” and “high”) and check it against the query - 
-    If the middle element is greater than the query, move the “high” down and repeat the process 
+    The inputs to this method are a query and a sorted list lst. We would
+    like to return the index of query, or -1 if it is not in the list.
+    One non-recursive (i.e. iterative) algorithm follows these steps: - Compute the “low”
+    index (usually begins at 0) and the “high” index (usually begins at the length of the list - 1) -
+    Compute the index of the middle element (using “low” and “high”) and check it against the query -
+    If the middle element is greater than the query, move the “high” down and repeat the process
     using a loop
     '''
     low = 0
@@ -126,8 +150,8 @@ def binary_search_nr(query, lst): # non-recursive version
             print(mid)
             break
         high-1
-    
-        
+
+
     pass
 
 if __name__ == "__main__":
