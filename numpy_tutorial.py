@@ -3,7 +3,7 @@ Author      : Angie Geralis
 Class       : CS260
 Date        : 9/1/21
 Description : This is the main for the Introduction to Numpy
-portion of Lab 1. This introduces us to numpy so we can work with arrays 
+portion of Lab 1. This introduces us to numpy so we can work with arrays
 and matrices, as well as perform other high-level mathematical computations.
 '''
 
@@ -45,21 +45,23 @@ def main():
     ### ========== TODO 1 : START ========== ###
 
     # Create a 3D array of zeros with the dimensions (4,6,5)
-     [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0]
-     [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0]
-     [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0]
-     [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0]
-        
+     ex_array_3d = np.zeros((4,6,5))
+     print("3D array (of zeros)")
+     print(ex_array_3d)
+     print("number of dimensions:", ex_array_3d.ndim)
+     print("dimensions:", ex_array_3d.shape, "\n")
+
+
     # Fill the array with random values from [0, 301)
-     [0,184,0,0,1], [0,78,0,0,0], [0,0,0,0,0], [0,40,0,3,0], [0,0,45,0,0], [60,300,0,8,0]
-     [0,0,0,0,0], [0,2,188,0,0], [0,0,0,0,0], [0,12,0,0,0], [0,288,0,0,0], [0,0,0,0,0]
-     [0,0,0,0,0], [11,0,0,0,0], [0,0,299,0,0], [0,0,187,0,0], [0,0,185,5,0], [0,0,0,56,0]
-     [0,297,0,0,0], [0,0,0,0,0], [0,0,10,0,0], [0,0,0,0,0], [183,0,0,0,0], [0,134,9,0,0]
-        
+     for i in range(ex_array_3d.shape[0]):
+         ex_array_3d[i] = random.randrange(0, 301)
+     print("3d array (filled with random numbers)")
+     print(ex_array_3d, "\n")
+
     # Print out the array and its dimensions
-    
+
     # Create two 1D arrays, one filled with ones and one that is empty
-       [1,2,3,4,5,6] [0,0,0,0,0,0,0]
+
     # Print them out. README: Explain the output of the empty array
 
     ### ========== TODO 1 : END ========== ###
