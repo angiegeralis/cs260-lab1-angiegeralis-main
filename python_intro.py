@@ -127,9 +127,9 @@ def binary_search_r(query, lst): # recursive version
         return mid
     else:
         if lst[mid] < query:
-            tracker = binary_search_r(query, (lst[mid:]))
-            if tracker != -1:
-                return mid+ tracker
+            recurse = binary_search_r(query, (lst[mid:]))
+            if recurse != -1:
+                return mid+ recurse
             else:
                 return -1
         else:
@@ -146,19 +146,18 @@ def binary_search_nr(query, lst): # non-recursive version
     If the middle element is greater than the query, move the “high” down and repeat the process
     using a loop
     '''
-    low = 0
-    mid = 0
-    high = len(lst)-1
-    if lst[low] == query:
-        print(0)
-    if lst[high] == query:
-        print( high )
+        low=0
+    high = len(lst) - 1
     while low <= high:
-        mid = high//2
-        if lst[mid] == query:
-            print(mid)
-            break
-        high-1
+        mid = int(low + high) // 2
+        if query == lst[mid]:
+            return mid
+        if lst[mid] > query:
+            high -= 1
+        if lst[mid] < query:
+            low += 1
+
+    return -1
 
 
     pass
