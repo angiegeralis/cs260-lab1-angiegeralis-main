@@ -18,9 +18,10 @@ the second index.
 the entire list of the first dimension, but only the first index of the 2nd dimension
 3) I was not sure what to expect on this one other than some section of the array,
 but after running it I see now that it is returning the first two indexes of the rows
-of the first three columns. 
+of the first three columns.
 Part 3
-
+When I set the xlim and ylim to larger numbers the graph looked choppy. I preferred
+the smoother graph it gave without limits. 
 Part 4
 
 ---

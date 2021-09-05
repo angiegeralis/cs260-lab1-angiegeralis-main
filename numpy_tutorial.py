@@ -149,7 +149,7 @@ def main():
 
     print("ex_array_2d[:3,:2]")
     print(ex_array_2d[:3,:2], "\n")
-    
+
 
     # Comment the code back in and check your answer against the actual output.
 
