@@ -6,16 +6,7 @@ Description : This is the main driver program for the Introduction to Python
 portion of Lab 1. This intro consists of a series of coding exercises that cover
 some of the core syntax, data structures, and functionality of Python
 
-fb_file = open ("data/facebook_users.csv","r")
-for line in fb_file:
-    tokens = line.split(",")
-    year = int.tokens([0])
-    users = int(tokens[1])
-    print(year,users)
-fb_file.close()
 
-data = np.loadtxt("data/facebook_users.csv", dtype=int, delimited)
-print(data)
 '''
 
 # TODO add imports here

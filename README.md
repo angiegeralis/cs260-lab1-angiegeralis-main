@@ -21,7 +21,7 @@ but after running it I see now that it is returning the first two indexes of the
 of the first three columns.
 Part 3
 When I set the xlim and ylim to larger numbers the graph looked choppy. I preferred
-the smoother graph it gave without limits. 
+the smoother graph it gave without limits.
 Part 4
 
 ---
