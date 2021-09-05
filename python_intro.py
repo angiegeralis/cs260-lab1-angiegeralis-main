@@ -39,9 +39,9 @@ def main():
     print("out of place")
     shuffle_out_of_place([1,2,3,4])
     print("fib")
-    fib(3)
+    print(fib(3))
     print("binsrchr")
-    binary_search_r(4,[1,2,3,4,5])
+    print(binary_search_r(4,[1,2,3,4,5]))
     print("binsrchnr")
     binary_search_nr(4,[1,2,3,4,5])
 
@@ -72,7 +72,7 @@ def shuffle_in_place(lst):
     list without returning anything.
     '''
     # find length of list
-   length = len(lst)
+    length = len(lst)
     # start from highest increase and go down list, chosing a random index point to swap i with each time
     for i in (length-1,0,-1):
         rand_index = random.randint(0,i+1)
@@ -117,14 +117,23 @@ def binary_search_r(query, lst): # recursive version
     - If the target is greater than the middle element, call binary search on the second half of the
     list (starting after the middle element and going all the way to the end).
     '''
-    mid = (len(lst) -1) //2
-    if lst[mid] == query:
-        print(mid)
-    if query < lst[mid]:
-        binary_search_r(query,lst[0:mid])
-    if query > lst[mid]:
-        binary_search_r(query,lst[mid:(len(lst)-1)])
-
+        mid = len(lst) // 2
+    if len(lst) == 1:
+        if lst[mid]==query:
+            return mid
+        else:
+            return -1
+    elif lst[mid] == query:
+        return mid
+    else:
+        if lst[mid] < query:
+            tracker = binary_search_r(query, (lst[mid:]))
+            if tracker != -1:
+                return mid+ tracker
+            else:
+                return -1
+        else:
+            return binary_search_r(query, (lst[:mid]))
     pass
 
 def binary_search_nr(query, lst): # non-recursive version
