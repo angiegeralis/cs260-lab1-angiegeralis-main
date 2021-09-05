@@ -21,7 +21,6 @@ import sys
 def main():
     # NOTE: make sure to run the code frequently and analyze all output before
     # doing the TODO sections
-
     print("Array Initialization\n")
 
     # arrays of zeros, 1D array/vector
@@ -45,25 +44,28 @@ def main():
     ### ========== TODO 1 : START ========== ###
 
     # Create a 3D array of zeros with the dimensions (4,6,5)
-     ex_array_3d = np.zeros((4,6,5))
-     print("3D array (of zeros)")
-     print(ex_array_3d)
-     print("number of dimensions:", ex_array_3d.ndim)
-     print("dimensions:", ex_array_3d.shape, "\n")
-
+    ex_array_3d = np.zeros((4,6,5))
+    print(ex_array_3d)
 
     # Fill the array with random values from [0, 301)
-     for i in range(ex_array_3d.shape[0]):
-         ex_array_3d[i] = random.randrange(0, 301)
-     print("3d array (filled with random numbers)")
-     print(ex_array_3d, "\n")
+    for i in range(ex_array_3d.shape[0]):
+        ex_array_3d[i] = random.randrange(0, 301)
 
     # Print out the array and its dimensions
-
+    print("3d array (filled with random numbers)")
+    print(ex_array_3d, "\n")
+    print("number of dimensions:", ex_array_3d.ndim)
+    print("dimensions:", ex_array_3d.shape, "\n")
     # Create two 1D arrays, one filled with ones and one that is empty
-
+    ones_array_1d = np.ones((5))
+    empty_array_1d = np.empty((0))
     # Print them out. README: Explain the output of the empty array
-
+    print("1D array (of ones)")
+    print(ones_array_1d)
+    print("number of dimensions:", ones_array_1d.ndim)
+    print("1D array (empty)")
+    print(empty_array_1d)
+    print("number of dimensions:", empty_array_1d.ndim)
     ### ========== TODO 1 : END ========== ###
     sys.exit("finish TODO 1") # comment to continue lab
 
