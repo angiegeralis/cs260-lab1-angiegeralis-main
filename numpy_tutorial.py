@@ -67,7 +67,7 @@ def main():
     print(empty_array_1d)
     print("number of dimensions:", empty_array_1d.ndim)
     ### ========== TODO 1 : END ========== ###
-    sys.exit("finish TODO 1") # comment to continue lab
+    #sys.exit("finish TODO 1") # comment to continue lab
 
     # array from a list
     fib_list = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
@@ -140,7 +140,7 @@ def main():
 
     # For the commented out examples of array slicing, write out the expected
     # output in your README.
-    """
+
     print("ex_array_2d[2]")
     print(ex_array_2d[2], "\n")
 
@@ -149,7 +149,7 @@ def main():
 
     print("ex_array_2d[:3,:2]")
     print(ex_array_2d[:3,:2], "\n")
-    """
+    
 
     # Comment the code back in and check your answer against the actual output.
 

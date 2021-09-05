@@ -9,9 +9,16 @@ Number of Late Days Using for this lab:
 ### Analysis
 
 Part 1
+explain empty numpy array
 
 Part 2
-
+1) I expect it to return the third row of the array, this makes sense because it is
+the second index.
+2) I expect it to return the second column, this makes sense because it is returning
+the entire list of the first dimension, but only the first index of the 2nd dimension
+3) I was not sure what to expect on this one other than some section of the array,
+but after running it I see now that it is returning the first two indexes of the rows
+of the first three columns. 
 Part 3
 
 Part 4
