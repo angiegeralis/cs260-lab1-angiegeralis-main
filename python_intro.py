@@ -6,7 +6,6 @@ Description : This is the main driver program for the Introduction to Python
 portion of Lab 1. This intro consists of a series of coding exercises that cover
 some of the core syntax, data structures, and functionality of Python
 
-
 '''
 
 # TODO add imports here
@@ -44,7 +43,7 @@ def main():
 
 def movie_ticket_cost():
     '''
-    Description: Calculates the price of movie tickets based on the user’s age.
+    Calculates the price of movie tickets based on the user’s age.
     The method will prompt the user to enter their age, then print out the result.
     '''
     #take input of age and classify as $12 or $8 ticket
@@ -59,7 +58,7 @@ def movie_ticket_cost():
 
 def shuffle_in_place(lst):
     '''
-    Description: Shuffles a given list in place by changing the order of the original
+    Shuffles a given list in place by changing the order of the original
     list without returning anything.
     '''
     # find length of list
@@ -74,7 +73,7 @@ def shuffle_in_place(lst):
 
 def shuffle_out_of_place(lst):
     '''
-    Description: Shuffles a given list out of place by leaving the original list intact
+    Shuffles a given list out of place by leaving the original list intact
     and returning a new shuffled version of the list.
     '''
     newlst = lst[:]
@@ -92,6 +91,7 @@ def fib(n):
     '''
     Calculates the nth Fibonacci number, given a non-negative integer n.
     '''
+    #start with 1,1...
     if n == 0:
         return 1
     if n == 1:
@@ -102,13 +102,14 @@ def fib(n):
 
 def binary_search_r(query, lst): # recursive version
     '''
-    Take a middle element and check it against the target. - If they are equal,
-    return the index of the middle element. - If the target is less than the middle element,
-    call binary search on the first half of the list (up through but not including the middle element).
-    - If the target is greater than the middle element, call binary search on the second half of the
-    list (starting after the middle element and going all the way to the end).
+    Return the index of query, or -1 if it is not in the list. Recursive algorithm
+    will take a middle element and check it against the target.If they are equal,
+    it will return the index of the middle element. If the target is less than
+    the middle element it calls binary search on the first half of the list.
+    If the target is greater than the middle element it calls binary search on
+    the second half of the list.
     '''
-        mid = len(lst) // 2
+        mid = len(lst) // 2 #assigns mid
     if len(lst) == 1:
         if lst[mid]==query:
             return mid
@@ -118,9 +119,11 @@ def binary_search_r(query, lst): # recursive version
         return mid
     else:
         if lst[mid] < query:
+            #in order to keep track of the original index in my code, I had to create
+            #a recurse variable that could be added to the mid
             recurse = binary_search_r(query, (lst[mid:]))
             if recurse != -1:
-                return mid+ recurse
+                return mid + recurse #adds segment of sliced lst if query is above the mid
             else:
                 return -1
         else:
@@ -129,13 +132,11 @@ def binary_search_r(query, lst): # recursive version
 
 def binary_search_nr(query, lst): # non-recursive version
     '''
-    The inputs to this method are a query and a sorted list lst. We would
-    like to return the index of query, or -1 if it is not in the list.
-    One non-recursive (i.e. iterative) algorithm follows these steps: - Compute the “low”
-    index (usually begins at 0) and the “high” index (usually begins at the length of the list - 1) -
-    Compute the index of the middle element (using “low” and “high”) and check it against the query -
-    If the middle element is greater than the query, move the “high” down and repeat the process
-    using a loop
+    Return the index of query, or -1 if it is not in the list.
+    Iterative algorithm will Compute the “low” index (usually begins at 0)
+    and the “high” index. Then compute the index of the middle element and check
+    it against the query. If the middle element is greater than the query, move
+    the “high” down and repeat the process using a loop.
     '''
         low=0
     high = len(lst) - 1
@@ -143,9 +144,9 @@ def binary_search_nr(query, lst): # non-recursive version
         mid = int(low + high) // 2
         if query == lst[mid]:
             return mid
-        if lst[mid] > query:
+        if lst[mid] > query:  #decrease high index when mid is greater than query
             high -= 1
-        if lst[mid] < query:
+        if lst[mid] < query: #increase low when mid is less than query
             low += 1
 
     return -1

@@ -154,7 +154,7 @@ def main():
     # Comment the code back in and check your answer against the actual output.
 
     ### ========== TODO 2 : END ========== ###
-    sys.exit("finish TODO 2") # comment to continue lab
+    #sys.exit("finish TODO 2") # comment to continue lab
 
     # --------------
     # TODO 3: go through the following code and make sure it makes sense
@@ -185,9 +185,9 @@ def main():
 
     to_be_concat_2 = np.arange(5)
     to_be_concat_2 = np.reshape(to_be_concat_2, (5,1))
-    print("array (to be concatenated to the 2d array) (5x1)")
+    print("array (to be concatenated to the 2d array) (5x1)") #not same shape
     print(to_be_concat_2)
-    print("After concatenation (axis=1) (5x5)")
+    print("After concatenation (axis=1) (5x5)") #not same shape
     print(np.concatenate((ex_array_2d, to_be_concat_2), 1), "\n")
 
     print("Basic Operations\n")

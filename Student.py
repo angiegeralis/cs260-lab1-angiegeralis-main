@@ -1,5 +1,14 @@
 '''
-TODO: add header here
+Author      : Angie Geralis
+Class       : CS260
+Date        : 9/7/21
+Description : This is the Student class in part 4 of lab 1 class that takes the
+full name of the student, their graduating year, and their TriCo college. Each
+student should also have a list of courses they are taking for the current semester.
+We use this class to practice getter and __str__ methods, as well as write methods
+for adding or dropping courses to the list of courses they are taking. Additionally,
+a dictionary of students is created with assigned ID numbers (keys).
+
 '''
 class Student:
 
@@ -10,7 +19,7 @@ class Student:
         self.name = student_name
         self.year = student_year
         self.college = student_college
-        self.classes = student_classes = []
+        self.classes = []
     """TODO: Write getters. Although not necessary in python, it is good
     practice to have getter and setter methods (as needed) for the sake of
     encapsulazation."""
@@ -27,21 +36,25 @@ class Student:
         # check through list of classes, if you already have that class,
         # tell the user that you are already enrolled. If not, add the class
         # to the list
+        course_browser = True
         for i in range(len(self.classes)):
-            if i == course:
+            if self.classes[i] == course:
+                course_browser = False
                 print("Already enrolled. You cannot add the same class twice.")
-            else:
-                self.classes.append(course)
+        if course_browser == True:
+            self.classes.append(course)
 
     """TODO: Write the drop course method"""
     def drop_course(self, course):
         # check through the list of classes, if you find the class that matches
         # the parameter, remove the class. If not, tell the user they are not enrolled
+        course_browser = True
         for i in range(len(self.classes)):
-            if i == course:
+            if self.classes[i] == course:
+                course_browser = False
                 self.classes.remove(course)
-            else:
-                print("Not enrolled. You cannot remove a class you don't take.")
+        if course_browser == True:
+            print("Not enrolled. You cannot remove a class you don't take.")
 
     """TODO: Write the __str__ method"""
     def __str__(self):
@@ -57,7 +70,7 @@ def main():
 
     print("Student Class Testing\n")
     # TODO create instance
-    bob = Student("Bob",2024,"Haverford")
+    bob = Student("Bob",2024,"Haverford College")
     print("Testing the getters:")
     # TODO test getters
     print(bob.get_student_name())
@@ -81,29 +94,35 @@ def main():
 
     print("Student Dictionary Exercises\n")
     # TODO create dictionary called students
-
+    students = {}
     print("Dictionary contents:")
     #print_dict(students) uncomment
-
+    students[123] = Student(student_lst[0][0],student_lst[0][1],student_lst[0][2]) #123 is student ID
+    students[345] = Student(student_lst[1][0],student_lst[1][1],student_lst[1][2])
+    students[678] = Student(student_lst[2][0],student_lst[2][1],student_lst[2][2])
+    students[910] = Student(student_lst[3][0],student_lst[3][1],student_lst[3][2])
+    students[112] = Student(student_lst[4][0],student_lst[4][1],student_lst[4][2])
     print("Trying to add a student with same key:")
     # TODO
-
+    angie = Student("Angie Geralis",2024,"Haverford College")
+    students[123] = angie #reassign 123 as angie's student ID
     print("Dictionary contents afterwards:")
-    #print_dict(students) uncomment
+    print_dict(students)
 
     print("Trying to add a student with new key and a repeated value/Student:")
     # TODO
-
+    students[111] = angie #give angie a second student ID
     print("Dictionary contents afterwards:")
-    #print_dict(students) uncomment
+    print_dict(students)
 
-    specific_id = None # TODO
+    specific_id = 345 # TODO
     print("Getting Student at key %i:" % (specific_id))
-    # TODO
-
+    # prints info of student corresponding to ID 345
+    print(students[345])
     print("Removing Student at key %i:" % (specific_id))
+    students.pop(345) #pop removes a student from list
     print("Dictionary contents afterwards:")
-    #print_dict(students) uncomment
+    print_dict(students) #prints dictionary without student corresponding to ID345
 
     """ ========== TODO : END ========== """
 
